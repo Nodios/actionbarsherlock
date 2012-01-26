@@ -116,7 +116,7 @@ public class FragmentTabsPager extends FragmentActivity {
                 mContext = context;
             }
 
-            @Override
+            
             public View createTabContent(String tag) {
                 View v = new View(mContext);
                 v.setMinimumWidth(0);
@@ -156,22 +156,22 @@ public class FragmentTabsPager extends FragmentActivity {
             return Fragment.instantiate(mContext, info.clss.getName(), info.args);
         }
 
-        @Override
+        
         public void onTabChanged(String tabId) {
             int position = mTabHost.getCurrentTab();
             mViewPager.setCurrentItem(position);
         }
 
-        @Override
+        
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         }
 
-        @Override
+        
         public void onPageSelected(int position) {
             mTabHost.setCurrentTab(position);
         }
 
-        @Override
+        
         public void onPageScrollStateChanged(int state) {
         }
     }

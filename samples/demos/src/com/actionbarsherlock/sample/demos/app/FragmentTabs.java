@@ -105,7 +105,7 @@ public class FragmentTabs extends FragmentActivity {
                 mContext = context;
             }
 
-            @Override
+            
             public View createTabContent(String tag) {
                 View v = new View(mContext);
                 v.setMinimumWidth(0);
@@ -141,7 +141,7 @@ public class FragmentTabs extends FragmentActivity {
             mTabHost.addTab(tabSpec);
         }
 
-        @Override
+        
         public void onTabChanged(String tabId) {
             TabInfo newTab = mTabs.get(tabId);
             if (mLastTab != newTab) {

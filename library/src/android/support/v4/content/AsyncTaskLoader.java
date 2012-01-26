@@ -74,7 +74,6 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
             }
         }
 
-        @Override
         public void run() {
             waiting = false;
             AsyncTaskLoader.this.executePendingTask();

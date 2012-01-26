@@ -37,12 +37,10 @@ class SearchViewCompatHoneycomb {
 
     public static Object newOnQueryTextListener(final OnQueryTextListenerCompatBridge listener) {
         return new OnQueryTextListener() {
-            @Override
             public boolean onQueryTextSubmit(String query) {
                 return listener.onQueryTextSubmit(query);
             }
 
-            @Override
             public boolean onQueryTextChange(String newText) {
                 return listener.onQueryTextChange(newText);
             }

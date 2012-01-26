@@ -38,13 +38,13 @@ public class ActionBarIndeterminateProgress extends FragmentActivity {
         //Notice how we *MUST* pass TRUE/FALSE objects rather than the native
         //true/false values.
         findViewById(R.id.enable).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View arg0) {
 				setProgressBarIndeterminateVisibility(Boolean.TRUE);
 			}
 		});
         findViewById(R.id.disable).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View arg0) {
 				setProgressBarIndeterminateVisibility(Boolean.FALSE);
 			}

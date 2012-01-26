@@ -47,7 +47,7 @@ public class ActionBarFeatureToggles extends FragmentActivity {
         getSupportActionBar().setListNavigationCallbacks(listAdapter, null);
         
         findViewById(R.id.display_progress_show).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View v) {
 				setProgressBarVisibility(true);
 				setProgressBarIndeterminateVisibility(Boolean.FALSE);
@@ -55,13 +55,13 @@ public class ActionBarFeatureToggles extends FragmentActivity {
 			}
 		});
         findViewById(R.id.display_progress_hide).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View v) {
 				setProgressBarVisibility(false);
 			}
 		});
         findViewById(R.id.display_iprogress_show).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View v) {
 				setProgressBarIndeterminateVisibility(Boolean.TRUE);
 				//Hack to hide the regular progress bar
@@ -69,21 +69,21 @@ public class ActionBarFeatureToggles extends FragmentActivity {
 			}
 		});
         findViewById(R.id.display_iprogress_hide).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View v) {
 				setProgressBarIndeterminateVisibility(Boolean.FALSE);
 			}
 		});
         
         findViewById(R.id.display_items_clear).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View v) {
 				items = 0;
 				invalidateOptionsMenu();
 			}
 		});
         findViewById(R.id.display_items_add).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View v) {
 				items += 1;
 				invalidateOptionsMenu();
@@ -91,110 +91,110 @@ public class ActionBarFeatureToggles extends FragmentActivity {
 		});
         
         findViewById(R.id.display_subtitle_show).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setSubtitle("The quick brown fox jumps over the lazy dog.");
             }
         });
         findViewById(R.id.display_subtitle_hide).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setSubtitle(null);
             }
         });
         
         findViewById(R.id.display_title_show).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayShowTitleEnabled(true);
             }
         });
         findViewById(R.id.display_title_hide).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayShowTitleEnabled(false);
             }
         });
         
         findViewById(R.id.display_custom_show).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayShowCustomEnabled(true);
             }
         });
         findViewById(R.id.display_custom_hide).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayShowCustomEnabled(false);
             }
         });
         
         findViewById(R.id.navigation_standard).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
             }
         });
         findViewById(R.id.navigation_list).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
             }
         });
         findViewById(R.id.navigation_tabs).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View view) {
 				getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 			}
 		});
         
         findViewById(R.id.display_home_as_up_show).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
         });
         findViewById(R.id.display_home_as_up_hide).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             }
         });
         
         findViewById(R.id.display_logo_show).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayUseLogoEnabled(true);
             }
         });
         findViewById(R.id.display_logo_hide).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayUseLogoEnabled(false);
             }
         });
         
         findViewById(R.id.display_home_show).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayShowHomeEnabled(true);
             }
         });
         findViewById(R.id.display_home_hide).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().setDisplayShowHomeEnabled(false);
             }
         });
         
         findViewById(R.id.display_actionbar_show).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().show();
             }
         });
         findViewById(R.id.display_actionbar_hide).setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View view) {
                 getSupportActionBar().hide();
             }
@@ -202,7 +202,7 @@ public class ActionBarFeatureToggles extends FragmentActivity {
         
         Button tabAdd = (Button)findViewById(R.id.display_tab_add);
         tabAdd.setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View view) {
 				ActionBar.Tab newTab = getSupportActionBar().newTab();
 				
@@ -227,7 +227,7 @@ public class ActionBarFeatureToggles extends FragmentActivity {
         tabAdd.performClick();
         
         findViewById(R.id.display_tab_select).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View view) {
 				if (getSupportActionBar().getTabCount() > 0) {
 					getSupportActionBar().selectTab(
@@ -239,13 +239,13 @@ public class ActionBarFeatureToggles extends FragmentActivity {
 			}
 		});
         findViewById(R.id.display_tab_remove).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View view) {
 				getSupportActionBar().removeTabAt(getSupportActionBar().getTabCount() - 1);
 			}
 		});
         findViewById(R.id.display_tab_remove_all).setOnClickListener(new View.OnClickListener() {
-			@Override
+			
 			public void onClick(View view) {
 				getSupportActionBar().removeAllTabs();
 			}

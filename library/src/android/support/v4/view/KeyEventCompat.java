@@ -62,7 +62,6 @@ public class KeyEventCompat {
             }
         }
 
-        @Override
         public int normalizeMetaState(int metaState) {
             if ((metaState & (KeyEvent.META_SHIFT_LEFT_ON | KeyEvent.META_SHIFT_RIGHT_ON)) != 0) {
                 metaState |= KeyEvent.META_SHIFT_ON;
@@ -73,7 +72,6 @@ public class KeyEventCompat {
             return metaState & META_ALL_MASK;
         }
 
-        @Override
         public boolean metaStateHasModifiers(int metaState, int modifiers) {
             metaState = normalizeMetaState(metaState) & META_MODIFIER_MASK;
             metaState = metaStateFilterDirectionalModifiers(metaState, modifiers,
@@ -83,7 +81,6 @@ public class KeyEventCompat {
             return metaState == modifiers;
         }
 
-        @Override
         public boolean metaStateHasNoModifiers(int metaState) {
             return (normalizeMetaState(metaState) & META_MODIFIER_MASK) == 0;
         }
@@ -93,17 +90,14 @@ public class KeyEventCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class HoneycombKeyEventVersionImpl implements KeyEventVersionImpl {
-        @Override
         public int normalizeMetaState(int metaState) {
             return KeyEventCompatHoneycomb.normalizeMetaState(metaState);
         }
 
-        @Override
         public boolean metaStateHasModifiers(int metaState, int modifiers) {
             return KeyEventCompatHoneycomb.metaStateHasModifiers(metaState, modifiers);
         }
 
-        @Override
         public boolean metaStateHasNoModifiers(int metaState) {
             return KeyEventCompatHoneycomb.metaStateHasNoModifiers(metaState);
         }

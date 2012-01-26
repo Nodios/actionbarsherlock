@@ -35,11 +35,11 @@ public class VelocityTrackerCompat {
      * Interface implementation that doesn't use anything about v4 APIs.
      */
     static class BaseVelocityTrackerVersionImpl implements VelocityTrackerVersionImpl {
-        @Override
+        
         public float getXVelocity(VelocityTracker tracker, int pointerId) {
             return tracker.getXVelocity();
         }
-        @Override
+        
         public float getYVelocity(VelocityTracker tracker, int pointerId) {
             return tracker.getYVelocity();
         }
@@ -49,11 +49,11 @@ public class VelocityTrackerCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class HoneycombVelocityTrackerVersionImpl implements VelocityTrackerVersionImpl {
-        @Override
+        
         public float getXVelocity(VelocityTracker tracker, int pointerId) {
             return VelocityTrackerCompatHoneycomb.getXVelocity(tracker, pointerId);
         }
-        @Override
+        
         public float getYVelocity(VelocityTracker tracker, int pointerId) {
             return VelocityTrackerCompatHoneycomb.getYVelocity(tracker, pointerId);
         }

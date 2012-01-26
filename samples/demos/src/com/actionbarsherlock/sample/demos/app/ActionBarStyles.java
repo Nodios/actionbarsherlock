@@ -36,21 +36,21 @@ public class ActionBarStyles extends FragmentActivity {
 		setContentView(R.layout.actionbar_styles);
 		
 		((Button)findViewById(R.id.theme_dark)).setOnClickListener(new OnClickListener() {
-			@Override
+			
 			public void onClick(View arg0) {
 				THEME = R.style.Theme_Sherlock;
 				recreate();
 			}
 		});
 		((Button)findViewById(R.id.theme_light)).setOnClickListener(new OnClickListener() {
-			@Override
+			
 			public void onClick(View arg0) {
 				THEME = R.style.Theme_Sherlock_Light;
 				recreate();
 			}
 		});
 		((Button)findViewById(R.id.theme_custom)).setOnClickListener(new OnClickListener() {
-			@Override
+			
 			public void onClick(View arg0) {
 				THEME = R.style.Theme_SherlockCustom;
 				recreate();

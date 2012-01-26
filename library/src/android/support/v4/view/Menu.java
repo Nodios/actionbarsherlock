@@ -72,33 +72,23 @@ public interface Menu extends android.view.Menu {
     static final int FLAG_APPEND_TO_GROUP = 0x0001;
 
 
-    @Override
     MenuItem add(CharSequence title);
 
-    @Override
     MenuItem add(int groupId, int itemId, int order, int titleRes);
 
-    @Override
     MenuItem add(int titleRes);
 
-    @Override
     MenuItem add(int groupId, int itemId, int order, CharSequence title);
 
-    @Override
     SubMenu addSubMenu(int groupId, int itemId, int order, CharSequence title);
 
-    @Override
     SubMenu addSubMenu(int groupId, int itemId, int order, int titleRes);
 
-    @Override
     SubMenu addSubMenu(CharSequence title);
 
-    @Override
     SubMenu addSubMenu(int titleRes);
 
-    @Override
     MenuItem findItem(int id);
 
-    @Override
     MenuItem getItem(int index);
 }

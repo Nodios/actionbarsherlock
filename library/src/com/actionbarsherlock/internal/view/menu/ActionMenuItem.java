@@ -242,7 +242,7 @@ public class ActionMenuItem implements MenuItem {
         return null;
     }
 
-    @Override
+    
     public MenuItem setActionView(int resId) {
         throw new UnsupportedOperationException();
     }

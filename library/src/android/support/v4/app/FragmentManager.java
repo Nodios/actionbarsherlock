@@ -415,7 +415,6 @@ final class FragmentManagerImpl extends FragmentManager {
     SparseArray<Parcelable> mStateArray = null;
 
     Runnable mExecCommit = new Runnable() {
-        @Override
         public void run() {
             execPendingActions();
         }
@@ -434,7 +433,7 @@ final class FragmentManagerImpl extends FragmentManager {
     @Override
     public void popBackStack() {
         enqueueAction(new Runnable() {
-            @Override public void run() {
+            public void run() {
                 popBackStackState(mActivity.getInternalCallbacks().getHandler(), null, -1, 0);
             }
         }, false);
@@ -450,7 +449,7 @@ final class FragmentManagerImpl extends FragmentManager {
     @Override
     public void popBackStack(final String name, final int flags) {
         enqueueAction(new Runnable() {
-            @Override public void run() {
+            public void run() {
                 popBackStackState(mActivity.getInternalCallbacks().getHandler(), name, -1, flags);
             }
         }, false);
@@ -469,7 +468,7 @@ final class FragmentManagerImpl extends FragmentManager {
             throw new IllegalArgumentException("Bad id: " + id);
         }
         enqueueAction(new Runnable() {
-            @Override public void run() {
+            public void run() {
                 popBackStackState(mActivity.getInternalCallbacks().getHandler(), null, id, flags);
             }
         }, false);
@@ -978,7 +977,6 @@ final class FragmentManagerImpl extends FragmentManager {
                                 f.mAnimatingAway = f.mView;
                                 f.mStateAfterAnimating = newState;
                                 anim.setAnimationListener(new AnimationListener() {
-                                    @Override
                                     public void onAnimationEnd(Animation animation) {
                                         if (fragment.mAnimatingAway != null) {
                                             fragment.mAnimatingAway = null;
@@ -986,10 +984,8 @@ final class FragmentManagerImpl extends FragmentManager {
                                                     0, 0);
                                         }
                                     }
-                                    @Override
                                     public void onAnimationRepeat(Animation animation) {
                                     }
-                                    @Override
                                     public void onAnimationStart(Animation animation) {
                                     }
                                 });

@@ -149,23 +149,19 @@ public class FragmentActivity extends Activity implements SupportActivity {
 
     MenuBuilder mSupportMenu;
     final MenuBuilder.Callback mSupportMenuCallback = new MenuBuilder.Callback() {
-        @Override
         public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
             return FragmentActivity.this.onMenuItemSelected(Window.FEATURE_OPTIONS_PANEL, item);
         }
 
-        @Override
         public void onMenuModeChange(MenuBuilder menu) {
             // No-op
         }
     };
     private final MenuPresenter.Callback mMenuPresenterCallback = new MenuPresenter.Callback() {
-        @Override
         public boolean onOpenSubMenu(MenuBuilder subMenu) {
             return false;
         }
 
-        @Override
         public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
         }
     };
@@ -174,7 +170,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
     private HashMap<android.view.MenuItem, MenuItemImpl> mNativeItemMap;
     /** Native menu item callback which proxies to our callback. */
     private final android.view.MenuItem.OnMenuItemClickListener mNativeItemListener = new android.view.MenuItem.OnMenuItemClickListener() {
-        @Override
         public boolean onMenuItemClick(android.view.MenuItem item) {
             if (DEBUG) Log.d(TAG, "[mNativeItemListener.onMenuItemClick] item: " + item);
 
@@ -221,15 +216,10 @@ public class FragmentActivity extends Activity implements SupportActivity {
     }
 
 
-
-
-
-    @Override
     public SupportActivity.InternalCallbacks getInternalCallbacks() {
         return mInternalCallbacks;
     }
 
-    @Override
     public Activity asActivity() {
         return this;
     }
@@ -282,7 +272,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
                 // Post the panel invalidate for later; avoid application onCreateOptionsMenu
                 // being called in the middle of onCreate or similar.
                 mDecor.post(new Runnable() {
-                    @Override
                     public void run() {
                         //Invalidate if the panel menu hasn't been created before this.
                         if (mSupportMenu == null) {
@@ -372,7 +361,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      * @return Returns {@code true} if the requested feature is supported and
      * now enabled.
      */
-    @Override
     public boolean requestWindowFeature(long featureId) {
         if (!IS_HONEYCOMB) {
             switch ((int)featureId) {
@@ -577,7 +565,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      * @return You must return true for the menu to be displayed; if you return
      * false it will not be shown.
      */
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (DEBUG) Log.d(TAG, "onCreateOptionsMenu(Menu): Returning true");
         return true;
@@ -799,7 +786,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
         }
     }
 
-    @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (onOptionsItemSelected(item)) {
             return true;
@@ -817,7 +803,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
         }
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
@@ -881,7 +866,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
         mFragments.execPendingActions();
     }
 
-    @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         return true;
     }
@@ -1081,7 +1065,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      *
      * @param visible Whether to show the progress bars in the title.
      */
-    @Override
     public void setProgressBarIndeterminateVisibility(Boolean visible) {
         if (IS_HONEYCOMB || (mActionBar == null)) {
             super.setProgressBarIndeterminateVisibility(visible);
@@ -1196,7 +1179,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      *
      * @return The handler for the appropriate action bar, or null.
      */
-    @Override
     public ActionBar getSupportActionBar() {
         initActionBar();
         return mActionBar;
@@ -1209,7 +1191,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      *
      * @param mode The action mode that just finished.
      */
-    @Override
     public void onActionModeFinished(ActionMode mode) {
     }
 
@@ -1220,7 +1201,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      *
      * @param mode The new action mode.
      */
-    @Override
     public void onActionModeStarted(ActionMode mode) {
     }
 
@@ -1237,7 +1217,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      * provide special handling for this action mode. (It will be handled by the
      * system.)
      */
-    @Override
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback) {
         return null;
     }
@@ -1250,7 +1229,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      * @return The ContextMode that was started, or null if it was cancelled
      * @see android.support.v4.view.ActionMode
      */
-    @Override
     public final ActionMode startActionMode(final ActionMode.Callback callback) {
         //Give the activity override a chance to handle the action mode
         ActionMode actionMode = onWindowStartingActionMode(callback);
@@ -1276,7 +1254,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
     /**
      * Called when a fragment is attached to the activity.
      */
-    @Override
     public void onAttachFragment(Fragment fragment) {
     }
 
@@ -1284,7 +1261,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
      * Return the FragmentManager for interacting with fragments associated
      * with this activity.
      */
-    @Override
     public FragmentManager getSupportFragmentManager() {
         //PLEASE let no one be dumb enough to call this too soon...
         initActionBar();
@@ -1306,7 +1282,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
     /**
      * Called by Fragment.startActivityForResult() to implement its behavior.
      */
-    @Override
     public void startActivityFromFragment(Fragment fragment, Intent intent,
             int requestCode) {
         if (requestCode == -1) {
@@ -1337,7 +1312,6 @@ public class FragmentActivity extends Activity implements SupportActivity {
     /**
      * Return the LoaderManager for this fragment, creating it if needed.
      */
-    @Override
     public LoaderManager getSupportLoaderManager() {
         if (mLoaderManager != null) {
             return mLoaderManager;

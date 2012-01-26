@@ -46,12 +46,10 @@ public class ParcelableCompat {
             mCallbacks = callbacks;
         }
 
-        @Override
         public T createFromParcel(Parcel source) {
             return mCallbacks.createFromParcel(source, null);
         }
 
-        @Override
         public T[] newArray(int size) {
             return mCallbacks.newArray(size);
         }

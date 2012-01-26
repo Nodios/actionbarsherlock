@@ -25,11 +25,11 @@ public class ActionBarTabNavigation extends FragmentActivity implements ActionBa
 		}
 	}
 
-	@Override
+	
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 	}
 
-	@Override
+	
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		getSupportFragmentManager()
 			.beginTransaction()
@@ -37,7 +37,7 @@ public class ActionBarTabNavigation extends FragmentActivity implements ActionBa
 			.commit();
 	}
 
-	@Override
+	
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 }

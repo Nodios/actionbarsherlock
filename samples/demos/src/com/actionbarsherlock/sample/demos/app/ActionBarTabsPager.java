@@ -116,29 +116,29 @@ public class ActionBarTabsPager extends FragmentActivity {
             return Fragment.instantiate(mContext, mTabs.get(position), null);
         }
 
-        @Override
+        
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         }
 
-        @Override
+        
         public void onPageSelected(int position) {
             mActionBar.setSelectedNavigationItem(position);
         }
 
-        @Override
+        
         public void onPageScrollStateChanged(int state) {
         }
 
-    	@Override
+    	
     	public void onTabSelected(Tab tab, FragmentTransaction ft) {
     		mViewPager.setCurrentItem(tab.getPosition());
     	}
 
-    	@Override
+    	
     	public void onTabReselected(Tab tab, FragmentTransaction ft) {
     	}
 
-    	@Override
+    	
     	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
     	}
     }

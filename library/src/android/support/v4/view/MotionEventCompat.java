@@ -37,7 +37,6 @@ public class MotionEventCompat {
      * Interface implementation that doesn't use anything about v4 APIs.
      */
     static class BaseMotionEventVersionImpl implements MotionEventVersionImpl {
-        @Override
         public int findPointerIndex(MotionEvent event, int pointerId) {
             if (pointerId == 0) {
                 // id 0 == index 0 and vice versa.
@@ -45,7 +44,6 @@ public class MotionEventCompat {
             }
             return -1;
         }
-        @Override
         public int getPointerId(MotionEvent event, int pointerIndex) {
             if (pointerIndex == 0) {
                 // index 0 == id 0 and vice versa.
@@ -53,14 +51,12 @@ public class MotionEventCompat {
             }
             throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
-        @Override
         public float getX(MotionEvent event, int pointerIndex) {
             if (pointerIndex == 0) {
                 return event.getX();
             }
             throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
-        @Override
         public float getY(MotionEvent event, int pointerIndex) {
             if (pointerIndex == 0) {
                 return event.getY();
@@ -73,19 +69,15 @@ public class MotionEventCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class EclairMotionEventVersionImpl implements MotionEventVersionImpl {
-        @Override
         public int findPointerIndex(MotionEvent event, int pointerId) {
             return MotionEventCompatEclair.findPointerIndex(event, pointerId);
         }
-        @Override
         public int getPointerId(MotionEvent event, int pointerIndex) {
             return MotionEventCompatEclair.getPointerId(event, pointerIndex);
         }
-        @Override
         public float getX(MotionEvent event, int pointerIndex) {
             return MotionEventCompatEclair.getX(event, pointerIndex);
         }
-        @Override
         public float getY(MotionEvent event, int pointerIndex) {
             return MotionEventCompatEclair.getY(event, pointerIndex);
         }

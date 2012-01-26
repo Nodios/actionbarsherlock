@@ -291,7 +291,6 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
             ViewPager.OnAdapterChangeListener {
         private int mScrollState;
 
-        @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             if (positionOffset > 0.5f) {
                 // Consider ourselves to be on the next page when we're 50% of the way there.
@@ -300,7 +299,6 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
             updateTextPositions(position, positionOffset);
         }
 
-        @Override
         public void onPageSelected(int position) {
             if (mScrollState == ViewPager.SCROLL_STATE_IDLE) {
                 // Only update the text here if we're not dragging or settling.
@@ -308,17 +306,14 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
             }
         }
 
-        @Override
         public void onPageScrollStateChanged(int state) {
             mScrollState = state;
         }
 
-        @Override
         public void onAdapterChanged(PagerAdapter oldAdapter, PagerAdapter newAdapter) {
             updateAdapter(oldAdapter, newAdapter);
         }
 
-        @Override
         public void onChanged() {
             updateText(mPager.getCurrentItem(), mPager.getAdapter());
         }

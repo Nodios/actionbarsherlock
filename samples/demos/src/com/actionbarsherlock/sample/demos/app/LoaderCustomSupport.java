@@ -140,7 +140,7 @@ public class LoaderCustomSupport extends FragmentActivity {
      */
     public static final Comparator<AppEntry> ALPHA_COMPARATOR = new Comparator<AppEntry>() {
         private final Collator sCollator = Collator.getInstance();
-        @Override
+        
         public int compare(AppEntry object1, AppEntry object2) {
             return sCollator.compare(object1.getLabel(), object2.getLabel());
         }
@@ -426,13 +426,13 @@ public class LoaderCustomSupport extends FragmentActivity {
             Log.i("LoaderCustom", "Item clicked: " + id);
         }
 
-        @Override public Loader<List<AppEntry>> onCreateLoader(int id, Bundle args) {
+        public Loader<List<AppEntry>> onCreateLoader(int id, Bundle args) {
             // This is called when a new Loader needs to be created.  This
             // sample only has one Loader with no arguments, so it is simple.
             return new AppListLoader(getActivity());
         }
 
-        @Override public void onLoadFinished(Loader<List<AppEntry>> loader, List<AppEntry> data) {
+        public void onLoadFinished(Loader<List<AppEntry>> loader, List<AppEntry> data) {
             // Set the new data in the adapter.
             mAdapter.setData(data);
 
@@ -444,7 +444,7 @@ public class LoaderCustomSupport extends FragmentActivity {
             }
         }
 
-        @Override public void onLoaderReset(Loader<List<AppEntry>> loader) {
+        public void onLoaderReset(Loader<List<AppEntry>> loader) {
             // Clear the data in the adapter.
             mAdapter.setData(null);
         }

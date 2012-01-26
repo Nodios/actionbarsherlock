@@ -98,7 +98,7 @@ public class ViewPager extends ViewGroup {
     }
 
     private static final Comparator<ItemInfo> COMPARATOR = new Comparator<ItemInfo>(){
-        @Override
+        
         public int compare(ItemInfo lhs, ItemInfo rhs) {
             return lhs.position - rhs.position;
         }};
@@ -238,17 +238,17 @@ public class ViewPager extends ViewGroup {
      * every method of {@link OnPageChangeListener}.
      */
     public static class SimpleOnPageChangeListener implements OnPageChangeListener {
-        @Override
+        
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             // This space for rent
         }
 
-        @Override
+        
         public void onPageSelected(int position) {
             // This space for rent
         }
 
-        @Override
+        
         public void onPageScrollStateChanged(int state) {
             // This space for rent
         }
@@ -851,11 +851,11 @@ public class ViewPager extends ViewGroup {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<SavedState>() {
-                    @Override
+                    
                     public SavedState createFromParcel(Parcel in, ClassLoader loader) {
                         return new SavedState(in, loader);
                     }
-                    @Override
+                    
                     public SavedState[] newArray(int size) {
                         return new SavedState[size];
                     }

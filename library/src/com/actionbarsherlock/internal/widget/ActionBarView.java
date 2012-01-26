@@ -117,14 +117,14 @@ public final class ActionBarView extends RelativeLayout {
         LayoutInflater.from(context).inflate(R.layout.abs__action_bar, this, true);
 
         mNavItemSelectedListener = new AdapterView.OnItemSelectedListener() {
-            @Override
+            
             public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 if (mCallback != null) {
                     mCallback.onNavigationItemSelected(arg2, arg3);
                 }
             }
 
-            @Override
+            
             public void onNothingSelected(AdapterView<?> arg0) {
                 //No op
             }
@@ -241,7 +241,7 @@ public final class ActionBarView extends RelativeLayout {
 
         mLogoNavItem = new ActionMenuItem(context, 0, android.R.id.home, 0, 0, mTitle);
         mHomeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View v) {
                 if (context instanceof Activity) {
                     ((Activity)context).onMenuItemSelected(Window.FEATURE_OPTIONS_PANEL, mLogoNavItem);
@@ -564,7 +564,7 @@ public final class ActionBarView extends RelativeLayout {
 
     private static class TabImpl extends ActionBar.Tab {
         private static final View.OnClickListener clickListener = new View.OnClickListener() {
-            @Override
+            
             public void onClick(View v) {
                 ((TabImpl)v.getTag()).select();
             }

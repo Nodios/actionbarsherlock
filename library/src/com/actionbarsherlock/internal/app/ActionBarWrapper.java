@@ -87,7 +87,7 @@ public final class ActionBarWrapper {
                     .setText(tab.getText());
         }
 
-        @Override
+        
         public void onTabReselected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction ft) {
             ActionBar.TabListener listener = ((ActionBar.Tab)tab.getTag()).getTabListener();
             if (listener != null) {
@@ -95,7 +95,7 @@ public final class ActionBarWrapper {
             }
         }
 
-        @Override
+        
         public void onTabSelected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction ft) {
             ActionBar.TabListener listener = ((ActionBar.Tab)tab.getTag()).getTabListener();
             if (listener != null) {
@@ -103,7 +103,7 @@ public final class ActionBarWrapper {
             }
         }
 
-        @Override
+        
         public void onTabUnselected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction ft) {
             ActionBar.TabListener listener = ((ActionBar.Tab)tab.getTag()).getTabListener();
             if (listener != null) {
@@ -115,19 +115,19 @@ public final class ActionBarWrapper {
         // ACTION MODE SUPPORT
         // ---------------------------------------------------------------------
 
-        @Override
+        
         protected ActionMode startActionMode(final ActionMode.Callback callback) {
             //We have to re-wrap the instances in every callback since the
             //wrapped instance is needed before we could have a change to
             //properly store it.
             return new ActionModeWrapper(mActivity,
                 mActivity.startActionMode(new android.view.ActionMode.Callback() {
-                    @Override
+                    
                     public boolean onPrepareActionMode(android.view.ActionMode mode, android.view.Menu menu) {
                         return callback.onPrepareActionMode(new ActionModeWrapper(mActivity, mode), new MenuWrapper(menu));
                     }
 
-                    @Override
+                    
                     public void onDestroyActionMode(android.view.ActionMode mode) {
                         final ActionMode actionMode = new ActionModeWrapper(mActivity, mode);
                         callback.onDestroyActionMode(actionMode);
@@ -137,12 +137,12 @@ public final class ActionBarWrapper {
                         ((SherlockActivity)mActivity).onActionModeFinished(actionMode);
                     }
 
-                    @Override
+                    
                     public boolean onCreateActionMode(android.view.ActionMode mode, android.view.Menu menu) {
                         return callback.onCreateActionMode(new ActionModeWrapper(mActivity, mode), new MenuWrapper(menu));
                     }
 
-                    @Override
+                    
                     public boolean onActionItemClicked(android.view.ActionMode mode, android.view.MenuItem item) {
                         return callback.onActionItemClicked(new ActionModeWrapper(mActivity, mode), new MenuItemWrapper(item));
                     }
@@ -331,7 +331,7 @@ public final class ActionBarWrapper {
         public void addOnMenuVisibilityListener(final OnMenuVisibilityListener listener) {
             if ((listener != null) && !mMenuListenerMap.containsKey(listener)) {
                 android.app.ActionBar.OnMenuVisibilityListener nativeListener = new android.app.ActionBar.OnMenuVisibilityListener() {
-                    @Override
+                    
                     public void onMenuVisibilityChanged(boolean isVisible) {
                         listener.onMenuVisibilityChanged(isVisible);
                     }
@@ -539,7 +539,7 @@ public final class ActionBarWrapper {
         @Override
         public void setListNavigationCallbacks(SpinnerAdapter adapter, final OnNavigationListener callback) {
             getActionBar().setListNavigationCallbacks(adapter, new android.app.ActionBar.OnNavigationListener() {
-                @Override
+                
                 public boolean onNavigationItemSelected(int itemPosition, long itemId) {
                     if (callback != null) {
                         return callback.onNavigationItemSelected(itemPosition, itemId);

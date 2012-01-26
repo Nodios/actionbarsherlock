@@ -34,17 +34,14 @@ public class SearchViewCompat {
 
     static class SearchViewCompatStubImpl implements SearchViewCompatImpl {
 
-        @Override
         public View newSearchView(Context context) {
             return null;
         }
 
-        @Override
         public Object newOnQueryTextListener(OnQueryTextListenerCompat listener) {
             return null;
         }
 
-        @Override
         public void setOnQueryTextListener(Object searchView, Object listener) {
 
         }
@@ -61,11 +58,9 @@ public class SearchViewCompat {
         public Object newOnQueryTextListener(final OnQueryTextListenerCompat listener) {
             return SearchViewCompatHoneycomb.newOnQueryTextListener(
                     new SearchViewCompatHoneycomb.OnQueryTextListenerCompatBridge() {
-                        @Override
                         public boolean onQueryTextSubmit(String query) {
                             return listener.onQueryTextSubmit(query);
                         }
-                        @Override
                         public boolean onQueryTextChange(String newText) {
                             return listener.onQueryTextChange(newText);
                         }

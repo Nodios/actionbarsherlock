@@ -47,7 +47,6 @@ public interface MenuItem extends android.view.MenuItem {
          */
         public abstract boolean onMenuItemClick(MenuItem item);
 
-        @Override
         public final boolean onMenuItemClick(android.view.MenuItem item) {
             return this.onMenuItemClick(new MenuItemWrapper(item));
         }
@@ -135,31 +134,22 @@ public interface MenuItem extends android.view.MenuItem {
     // MENU ITEM SUPPORT
     // ---------------------------------------------------------------------
 
-    @Override
     SubMenu getSubMenu();
 
-    @Override
     MenuItem setAlphabeticShortcut(char alphaChar);
 
-    @Override
     MenuItem setCheckable(boolean checkable);
 
-    @Override
     MenuItem setChecked(boolean checked);
 
-    @Override
     MenuItem setEnabled(boolean enabled);
 
-    @Override
     MenuItem setIcon(Drawable icon);
 
-    @Override
     MenuItem setIcon(int iconRes);
 
-    @Override
     MenuItem setIntent(Intent intent);
 
-    @Override
     MenuItem setNumericShortcut(char numericChar);
 
     /**
@@ -170,18 +160,13 @@ public interface MenuItem extends android.view.MenuItem {
      */
     MenuItem setOnMenuItemClickListener(OnMenuItemClickListener menuItemClickListener);
 
-    @Override
     MenuItem setShortcut(char numericChar, char alphaChar);
 
-    @Override
     MenuItem setTitle(CharSequence title);
 
-    @Override
     MenuItem setTitle(int title);
 
-    @Override
     MenuItem setTitleCondensed(CharSequence title);
 
-    @Override
     MenuItem setVisible(boolean visible);
 }

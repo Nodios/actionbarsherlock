@@ -297,12 +297,10 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
             }
         }
 
-        @Override
         public int describeContents() {
             return 0;
         }
 
-        @Override
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeBundle(mState);
         }

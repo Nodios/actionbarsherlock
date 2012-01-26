@@ -28,53 +28,53 @@ public class SubMenuWrapper extends MenuWrapper implements SubMenu {
         return mSubMenu;
     }
 
-    @Override
+    
     public void clearHeader() {
         mSubMenu.clearHeader();
     }
 
-    @Override
+    
     public MenuItem getItem() {
         return new MenuItemWrapper(mSubMenu.getItem());
     }
 
-    @Override
+    
     public SubMenu setHeaderIcon(Drawable icon) {
         mSubMenu.setHeaderIcon(icon);
         return this;
     }
 
-    @Override
+    
     public SubMenu setHeaderIcon(int iconRes) {
         mSubMenu.setHeaderIcon(iconRes);
         return this;
     }
 
-    @Override
+    
     public SubMenu setHeaderTitle(CharSequence title) {
         mSubMenu.setHeaderTitle(title);
         return this;
     }
 
-    @Override
+    
     public SubMenu setHeaderTitle(int titleRes) {
         mSubMenu.setHeaderTitle(titleRes);
         return this;
     }
 
-    @Override
+    
     public SubMenu setHeaderView(View view) {
         mSubMenu.setHeaderView(view);
         return this;
     }
 
-    @Override
+    
     public SubMenu setIcon(Drawable icon) {
         mSubMenu.setIcon(icon);
         return this;
     }
 
-    @Override
+    
     public SubMenu setIcon(int iconRes) {
         mSubMenu.setIcon(iconRes);
         return this;

@@ -50,7 +50,6 @@ public class ActionBarActionItemCustomView extends FragmentActivity {
         l.addView(tv);
 
         l.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 Toast.makeText(
                         ActionBarActionItemCustomView.this,

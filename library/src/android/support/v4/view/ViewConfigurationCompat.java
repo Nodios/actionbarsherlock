@@ -34,7 +34,7 @@ public class ViewConfigurationCompat {
      * Interface implementation that doesn't use anything about v4 APIs.
      */
     static class BaseViewConfigurationVersionImpl implements ViewConfigurationVersionImpl {
-        @Override
+        
         public int getScaledPagingTouchSlop(ViewConfiguration config) {
             return config.getScaledTouchSlop();
         }
@@ -44,7 +44,7 @@ public class ViewConfigurationCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class FroyoViewConfigurationVersionImpl implements ViewConfigurationVersionImpl {
-        @Override
+        
         public int getScaledPagingTouchSlop(ViewConfiguration config) {
             return ViewConfigurationCompatFroyo.getScaledPagingTouchSlop(config);
         }

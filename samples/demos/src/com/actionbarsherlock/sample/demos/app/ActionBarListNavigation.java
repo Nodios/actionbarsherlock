@@ -18,7 +18,7 @@ public class ActionBarListNavigation extends FragmentActivity implements ActionB
 		getSupportActionBar().setListNavigationCallbacks(list, this);
 	}
 
-	@Override
+	
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
 		getSupportFragmentManager()
 			.beginTransaction()

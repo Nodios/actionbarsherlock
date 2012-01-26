@@ -354,7 +354,7 @@ class LoaderManagerImpl extends LoaderManager {
             }
         }
 
-        @Override public void onLoadComplete(Loader<Object> loader, Object data) {
+        public void onLoadComplete(Loader<Object> loader, Object data) {
             if (DEBUG) Log.v(TAG, "onLoadComplete: " + this);
 
             if (mDestroyed) {

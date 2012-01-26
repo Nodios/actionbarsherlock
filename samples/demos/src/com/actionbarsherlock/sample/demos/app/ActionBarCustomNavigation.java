@@ -37,7 +37,7 @@ public class ActionBarCustomNavigation extends FragmentActivity {
 
         //Bind to its state change
         ((RadioGroup)customNav.findViewById(R.id.radio_nav)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
+            
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 Toast.makeText(ActionBarCustomNavigation.this, "Navigation selection changed.", Toast.LENGTH_SHORT).show();
             }
